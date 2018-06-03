@@ -56,7 +56,8 @@ class ShoebotKernel(Kernel):
                                }}
                            }
                 self.send_response(self.iopub_socket, 'display_data', content)
-        os.remove('_temp.png')
+        if os.path.exists('_temp.png'):
+            os.remove('_temp.png')
 
         return {'status': 'ok',
                 # The base class increments the execution count
