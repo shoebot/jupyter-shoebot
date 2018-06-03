@@ -17,6 +17,8 @@ jupyter kernelspec install --user shoebot_kernel
 
 After running Jupyter with `jupyter notebook`, go to the `Kernel` menu, select `Change kernel` and select `Shoebot`.
 
+**Warning:** Right now, notebooks must be created on the repository root or the kernel won't launch properly. We'll fix this ASAP!
+
 ## Acknowledgements
 
 This plugin's structure was heavily inspired by the [Jupyter bash kernel](https://github.com/takluyver/bash_kernel).
