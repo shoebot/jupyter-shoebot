@@ -21,9 +21,9 @@ class ShoebotKernel(Kernel):
     language = 'no-op'
     language_version = '0.1'
     language_info = {
-        'name': 'Any text',
-        'mimetype': 'text/plain',
-        'file_extension': '.txt',
+        'name': 'python',
+        'mimetype': 'text/x-python',
+        'file_extension': '.bot',
     }
     banner = "Shoebot kernel - Run Shoebot scripts"
 
