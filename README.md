@@ -1,13 +1,28 @@
 # jupyter-shoebot
 
-Jupyter kernel for running Shoebot scripts
+Jupyter kernel for running [Shoebot](https://github.com/shoebot/shoebot) scripts
 
 ## Installation
 
-First, you need to have Shoebot and Jupyter installed. Using
-`virtualenvwrapper` for this is heavily recommended.
+First, you need to have Jupyter installed, as well as the development version
+of Shoebot. Using `virtualenvwrapper` for this is heavily recommended.
 
-After ensuring both packages are available, run
+```bash
+pip install jupyter jupyter-pip
+# clone the Shoebot repository and enter it
+cd shoebot
+python setup.py install
+```
+
+After ensuring both packages are available, install the extension.
+
+```bash
+# clone the jupyter-shoebot repository and enter it
+cd jupyter-shoebot
+python setup.py install
+```
+
+And finally, run
 
 ```bash
 jupyter kernelspec install --user shoebot_kernel
