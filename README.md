@@ -21,4 +21,4 @@ After running Jupyter with `jupyter notebook`, go to the `Kernel` menu, select `
 
 ## Acknowledgements
 
-This plugin's structure was heavily inspired by the [Jupyter bash kernel](https://github.com/takluyver/bash_kernel).
+This plugin's workings and install script are based on [cairo-jupyter](https://github.com/fomightez/cairo-jupyter)'s, and its structure was heavily inspired by the [Jupyter bash kernel](https://github.com/takluyver/bash_kernel).
