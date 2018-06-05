@@ -21,6 +21,8 @@ python setup.py install
 After ensuring both packages are available, install the extension.
 
 ```bash
+# leave the shoebot/ dir
+cd ..
 # clone the jupyter-shoebot repository, enter it and install
 git clone https://github.com/shoebot/jupyter-shoebot
 cd jupyter-shoebot
