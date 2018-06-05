@@ -8,8 +8,12 @@ First, you need to have Jupyter installed, as well as the development version
 of Shoebot. Using `virtualenvwrapper` for this is heavily recommended.
 
 ```bash
+# create the virtualenv
+mkvirtualenv jupytershoebot
+# install jupyter dependencies
 pip install jupyter jupyter-pip
-# clone the Shoebot repository and enter it
+# clone the Shoebot repository, enter it and install
+git clone https://github.com/shoebot/shoebot
 cd shoebot
 python setup.py install
 ```
@@ -17,22 +21,23 @@ python setup.py install
 After ensuring both packages are available, install the extension.
 
 ```bash
-# clone the jupyter-shoebot repository and enter it
+# leave the shoebot/ dir
+cd ..
+# clone the jupyter-shoebot repository, enter it and install
+git clone https://github.com/shoebot/jupyter-shoebot
 cd jupyter-shoebot
 python setup.py install
 ```
 
-And finally, run
+And finally, while still on the `jupyter-shoebot/` directory, run
 
 ```bash
-jupyter kernelspec install --user shoebot_kernel
+jupyter kernelspec install shoebot_kernel --sys-prefix
 ```
 
 ## Usage
 
 After running Jupyter with `jupyter notebook`, go to the `Kernel` menu, select `Change kernel` and select `Shoebot`.
-
-**Warning:** Right now, notebooks must be created on the repository root or the kernel won't launch properly. We'll fix this ASAP!
 
 ## Acknowledgements
 
