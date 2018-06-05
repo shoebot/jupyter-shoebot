@@ -22,17 +22,15 @@ cd jupyter-shoebot
 python setup.py install
 ```
 
-And finally, run
+And finally, while still on the `jupyter-shoebot/` directory, run
 
 ```bash
-jupyter kernelspec install --user shoebot_kernel
+jupyter kernelspec install shoebot_kernel --sys-prefix
 ```
 
 ## Usage
 
 After running Jupyter with `jupyter notebook`, go to the `Kernel` menu, select `Change kernel` and select `Shoebot`.
-
-**Warning:** Right now, notebooks must be created on the repository root or the kernel won't launch properly. We'll fix this ASAP!
 
 ## Acknowledgements
 
