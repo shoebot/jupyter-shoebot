@@ -1,18 +1,9 @@
 from ipykernel.kernelbase import Kernel
 import shoebot
+import io
 import os
 import urllib
 import base64
-
-
-def surface_to_png(surface):
-    # https://ipython-books.github.io/16-creating-a-simple-kernel-for-jupyter/
-    from io import BytesIO
-    b = BytesIO()
-    surface.write_to_png(b)
-    b.seek(0)
-    return urllib.quote_plus(
-        base64.b64encode(b.getvalue()))
 
 
 class ShoebotKernel(Kernel):
@@ -30,13 +21,14 @@ class ShoebotKernel(Kernel):
     def do_execute(self, code, silent, store_history=True, user_expressions=None,
                    allow_stdin=False):
 
-        bot = shoebot.create_bot(outputfile='_temp.png')
+        png_data = io.BytesIO()
+        bot = shoebot.create_bot(buff=png_data, format="png")
         exc = None
         try:
             bot.run(code, break_on_error=True)
-            png_data = open('_temp.png', 'r').read()
             # quote and encode PNG data for passing JSON response to Jupyter
-            png_string = urllib.quote_plus(base64.b64encode(png_data))
+            # https://ipython-books.github.io/16-creating-a-simple-kernel-for-jupyter/
+            png_string = base64.b64encode(png_data.getvalue()).decode("utf-8")
         except Exception as e:
             import traceback
             exc = traceback.format_exc(e)
@@ -56,8 +48,6 @@ class ShoebotKernel(Kernel):
                                }}
                            }
                 self.send_response(self.iopub_socket, 'display_data', content)
-        if os.path.exists('_temp.png'):
-            os.remove('_temp.png')
 
         return {'status': 'ok',
                 # The base class increments the execution count
