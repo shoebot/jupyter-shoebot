@@ -1,8 +1,3 @@
 #!/bin/bash
-#
-# postBuild runs with cwd at the project root
-#
-# install jupyter_shoebot extension
-#
-pip install .
+
 jupyter kernelspec install shoebot_kernel --sys-prefix
