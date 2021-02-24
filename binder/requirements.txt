@@ -1,0 +1,1 @@
+https://github.com/shoebot/shoebot/archive/master.zip#egg=shoebot
