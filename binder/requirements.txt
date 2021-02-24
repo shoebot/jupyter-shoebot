@@ -1,1 +1,1 @@
-https://github.com/shoebot/shoebot/archive/fb0cf30359d416a16e611c2c16d42f0b17394c03.tar.gz
+https://github.com/shoebot/shoebot/archive/master.zip#egg=shoebot
