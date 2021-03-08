@@ -2,6 +2,8 @@
 
 Jupyter kernel for running [Shoebot](https://github.com/shoebot/shoebot) scripts
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/shoebot/jupyter-shoebot/HEAD)
+
 ## Installation
 
 First, you need to have Jupyter installed, as well as the development version
